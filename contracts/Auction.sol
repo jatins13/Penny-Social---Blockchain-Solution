@@ -1,4 +1,4 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.6.4;
 
 
 contract Auction {
@@ -22,7 +22,7 @@ contract Auction {
     uint256 bidderCount = 0;
 
     //functions
-    function Auction() public payable {
+    constructor() public payable {
         beneficiary = msg.sender;
         uint256 n = 3;
         uint256[] memory emptyArray;
@@ -81,7 +81,7 @@ contract Auction {
 
     function getPersonDetails(uint256 id)
         public
-        constant
+        view
         returns (uint256, uint256, address)
     {
         return (
